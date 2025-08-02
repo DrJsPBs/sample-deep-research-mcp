@@ -1,0 +1,20 @@
+services:
+  cupcake-mcp:
+    build: .
+    container_name: cupcake-mcp
+    restart: unless-stopped
+    networks:
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.cupcake-mcp.rule=Host(`cupcake.onemainarmy.com`)"
+      - "traefik.http.routers.cupcake-mcp.entrypoints=websecure"
+      - "traefik.http.routers.cupcake-mcp.tls.certresolver=letsencrypt"
+      - "traefik.http.services.cupcake-mcp.loadbalancer.server.port=8090"
+      - "traefik.docker.network=traefik"
+    environment:
+      - PYTHONUNBUFFERED=1
+
+networks:
+  traefik:
+    external: true 

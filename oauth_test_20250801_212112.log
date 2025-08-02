@@ -1,0 +1,11 @@
+🔒 Comprehensive OAuth Enforcement Test
+=====================================
+Base URL: https://cupcake.onemainarmy.com
+Test Time: Fri Aug  1 09:21:12 PM EDT 2025
+
+1️⃣ Testing Public Discovery Endpoints
+=====================================
+[0;34mTesting: OAuth Protected Resource Discovery[0m
+Endpoint: /.well-known/oauth-protected-resource
+Status: 200
+[0;32m✅ PASS: Expected 200, got 200[0m
